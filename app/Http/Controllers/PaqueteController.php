@@ -84,6 +84,8 @@ class PaqueteController extends Controller
     public function edit($id)
     {
         //
+        $paquete = Paquete::find($id);
+        return view('paquetes.edit' , ['paquete'  => $paquete]);
     }
 
     /**
@@ -96,6 +98,19 @@ class PaqueteController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $paquete = Paquete::find($id);
+
+        $paquete->destino = $request->destino;
+        $paquete->descripcion = $request->descripcion;
+        $paquete->duracion = $request->duracion;
+        $paquete->precio = $request->precio;
+        $paquete->incluye = $request->incluye;
+        $paquete->save();
+
+        $cliente = DB::table('paquetes_turis')
+        ->select('paquetes_turis.*' )
+        ->get();
+        return view('paquetes.index', ['paquetes' => $paquete]);
     }
 
     /**

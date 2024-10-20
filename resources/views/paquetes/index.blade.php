@@ -34,9 +34,9 @@
             <td>{{$paquete->precio}}</td>
             <td>{{$paquete->incluye}}</td>
             <td>
-              {{-- <a href="{{ route('cliente.edit', ['cliente' => $cliente->id]) }}" class="btn btn-info">Edit</a> --}}
-              {{-- <form action ="{{route('cliente.destroy',['cliente' => $clientes->id])}}" --}}
-                    {{-- method='POST' style="display: inline-block"> --}}
+              <a href="{{ route('paquetes.edit', ['paquete' => $paquete->id]) }}" class="btn btn-info">Edit</a>
+              <form action ="{{route('paquete.destroy',['paquete' => $paquete->id])}}"
+                    method='POST' style="display: inline-block">
                     @method('delete')
                     @csrf
                     <input class="btn btn-danger" type="submit" value="Delete">

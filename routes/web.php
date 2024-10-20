@@ -28,3 +28,6 @@ Route::get('/clientes/{cliente}/edit', [ClienteController::class, 'edit'])->name
 Route::get('/paquetes', [PaqueteController::class, 'index'])->name('paquetes.index');
 Route::post('/paquetes', [PaqueteController::class, 'store'])->name('paquete.store');
 Route::get('/paquetes/create', [PaqueteController::class, 'create'])->name('paquete.create');
+Route::delete('/paquetes/{paquete}', [PaqueteController::class, 'destroy'])->name('paquete.destroy');
+Route::put('/paquetes/{paquete}', [PaqueteController::class, 'update'])->name('paquete.update');  
+Route::get('/paquetes/{paquete}/edit', [PaqueteController::class, 'edit'])->name('paquetes.edit');
