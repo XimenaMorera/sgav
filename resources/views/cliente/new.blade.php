@@ -10,7 +10,7 @@
 <body>
 <div class="container">
     <h1>Add Clientes</h1>
-    <form method="POST" action="{{route('comunas.store')}}">
+    <form method="POST" action="{{route('cliente.store')}}">
         @csrf
         <div class="mb-3">
           <label for="id" class="form-label">Code</label>
@@ -19,11 +19,31 @@
           <div id="idHelp" class="form-text">Cliente Code</div>
         </div>
         <div class="mb-3">
-          <label for="name" class="form-label">Cliente</label>
-          <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
-          name="name" placeholder="Comuna name.">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" aria-describedby="nameHelp"
+          name="nombre" placeholder="Nombre.">
         </div>
-        </select>
+        <div class="mb-3">
+          <label for="apellido" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="apellido" aria-describedby="nameHelp"
+          name="apellido" placeholder="Apellido.">
+        </div>
+        <div class="mb-3">
+          <label for="telefono" class="form-label">Telefono</label>
+          <input type="text" class="form-control" id="telefono" aria-describedby="nameHelp"
+          name="telefono" placeholder="Telefono.">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="text" class="form-control" id="email" aria-describedby="nameHelp"
+          name="email" placeholder="Email.">
+        </div>
+        <div class="mb-3">
+          <label for="direccion" class="form-label">Direccion</label>
+          <input type="text" class="form-control" id="direccion" aria-describedby="nameHelp"
+          name="direccion" placeholder="Direccion.">
+        </div>
+        
         <div class="mt-3">
         <button type="submit" class="btn btn-primary">save</button>
         <a href="submit" class="btn btn-primary" class="btn btn-warning">Cancel</a>

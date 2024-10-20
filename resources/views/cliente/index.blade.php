@@ -11,7 +11,7 @@
 <body>
 <div class="container">
     <h1>Cliente List</h1>
-    {{-- <a href="{{ route('cliente.create')}}" class="btn btn-success">Add </a> --}}
+     <a href="{{ route('cliente.create')}}" class="btn btn-success">Add </a> 
     <table class="table">
         <thead>
           <tr>
@@ -34,7 +34,7 @@
             <td>{{$cliente->email}}</td>
             <td>{{$cliente->direccion}}</td>
             <td>
-              <form action ="{{route('clientes.destroy',['cliente' => $cliente->id])}}"
+              {{-- <form action ="{{route('cliente.destroy',['cliente' => $cliente->id])}}" --}}
 
                     method='POST' style="display: inline-block">
                     @method('delete')

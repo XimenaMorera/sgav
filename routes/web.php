@@ -17,4 +17,6 @@ use App\Http\Controllers\ClienteController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/clientes', [ClienteController::class, 'index'])->name('clientes.index');
+Route::get('/clientes', [ClienteController::class, 'index'])->name('cliente.index');
+Route::post('/clientes', [ClienteController::class, 'store'])->name('cliente.store');
+Route::get('/clientes/create', [ClienteController::class, 'create'])->name('cliente.create');

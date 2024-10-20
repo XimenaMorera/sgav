@@ -31,6 +31,10 @@ class ClienteController extends Controller
     public function create()
     {
         //
+        $clientes = DB::table('clientes')
+        ->orderBy('id')
+        ->get();
+        return view('cliente.new');
     }
 
     /**
@@ -42,6 +46,24 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         //
+          // Validar los datos de entrada
+          $cliente = new Cliente();
+          $cliente->nombre = $request->nombre;
+          $cliente->apellido = $request->apellido;
+          $cliente->telefono = $request->telefono;
+          $cliente->direccion = $request->direccion;
+          $cliente->email = $request->email;
+          $cliente->save();
+  
+   
+          $clientes = DB::table('clientes')
+          ->select('id', 'nombre', 'apellido', 'telefono', 'email', 'direccion')
+          ->get();
+  
+          // Retorna la vista 'clientes.index' con los datos obtenidos
+          return view('cliente.index', ['clientes' => $clientes]);
+
+    
     }
 
     /**
