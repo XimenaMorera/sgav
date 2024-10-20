@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\PaqueteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,7 @@ Route::get('/clientes/create', [ClienteController::class, 'create'])->name('clie
 Route::delete('/clientes/{cliente}', [ClienteController::class, 'destroy'])->name('cliente.destroy');
 Route::put('/clientes/{cliente}', [ClienteController::class, 'update'])->name('cliente.update');  
 Route::get('/clientes/{cliente}/edit', [ClienteController::class, 'edit'])->name('cliente.edit');
+
+Route::get('/paquetes', [PaqueteController::class, 'index'])->name('paquetes.index');
+Route::post('/paquetes', [PaqueteController::class, 'store'])->name('paquete.store');
+Route::get('/paquetes/create', [PaqueteController::class, 'create'])->name('paquete.create');
