@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/clientes', [ClienteController::class, 'index'])->name('cliente.index');
 Route::post('/clientes', [ClienteController::class, 'store'])->name('cliente.store');
 Route::get('/clientes/create', [ClienteController::class, 'create'])->name('cliente.create');
+Route::delete('/clientes/{cliente}', [ClienteController::class, 'destroy'])->name('cliente.destroy');
+Route::put('/clientes/{cliente}', [ClienteController::class, 'update'])->name('cliente.update');  
+Route::get('/clientes/{cliente}/edit', [ClienteController::class, 'edit'])->name('cliente.edit');

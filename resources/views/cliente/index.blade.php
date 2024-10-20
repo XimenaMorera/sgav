@@ -25,7 +25,7 @@
           </tr>
         </thead>
         <tbody>
-            @foreach ($clientes as $cliente )
+            @foreach ($cliente as $cliente )
           <tr>
             <th scope="row">{{$cliente->id}}</th>
             <td>{{$cliente->nombre}}</td>
@@ -34,9 +34,9 @@
             <td>{{$cliente->email}}</td>
             <td>{{$cliente->direccion}}</td>
             <td>
-              {{-- <form action ="{{route('cliente.destroy',['cliente' => $cliente->id])}}" --}}
-
-                    method='POST' style="display: inline-block">
+              <a href="{{ route('cliente.edit', ['cliente' => $cliente->id]) }}" class="btn btn-info">Edit</a>
+              {{-- <form action ="{{route('cliente.destroy',['cliente' => $clientes->id])}}" --}}
+                    {{-- method='POST' style="display: inline-block"> --}}
                     @method('delete')
                     @csrf
                     <input class="btn btn-danger" type="submit" value="Delete">
