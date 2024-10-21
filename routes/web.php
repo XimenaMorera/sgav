@@ -31,3 +31,11 @@ Route::get('/paquetes/create', [PaqueteController::class, 'create'])->name('paqu
 Route::delete('/paquetes/{paquete}', [PaqueteController::class, 'destroy'])->name('paquete.destroy');
 Route::put('/paquetes/{paquete}', [PaqueteController::class, 'update'])->name('paquete.update');  
 Route::get('/paquetes/{paquete}/edit', [PaqueteController::class, 'edit'])->name('paquetes.edit');
+
+
+Route::get('/reservas', [ReservaController::class, 'index'])->name('reservas.index');
+Route::post('/reservas', [ReservaController::class, 'store'])->name('reserva.store');
+Route::get('/reservas/create', [ReservaController::class, 'create'])->name('reserva.create');
+Route::delete('/reservas/{reserva}', [ReservaController::class, 'destroy'])->name('reserva.destroy');
+Route::put('/reservas/{reserva}', [ReservaController::class, 'update'])->name('reserva.update');
+Route::get('/reservas/{reserva}/edit', [ReservaController::class, 'edit'])->name('reservas.edit');
