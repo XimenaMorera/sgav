@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\PaqueteController;
+use App\Http\Controllers\ReservaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,15 +46,12 @@ Route::get('/paquetes/create', [PaqueteController::class, 'create'])->name('paqu
 Route::delete('/paquetes/{paquete}', [PaqueteController::class, 'destroy'])->name('paquete.destroy');
 Route::put('/paquetes/{paquete}', [PaqueteController::class, 'update'])->name('paquete.update');  
 Route::get('/paquetes/{paquete}/edit', [PaqueteController::class, 'edit'])->name('paquetes.edit');
-<<<<<<< HEAD
 
 
-Route::get('/reservas', [ReservaController::class, 'index'])->name('reservas.index');
+Route::get('/reservas', [ReservaController::class, 'index'])->name('Reservas.index');
 Route::post('/reservas', [ReservaController::class, 'store'])->name('reserva.store');
 Route::get('/reservas/create', [ReservaController::class, 'create'])->name('reserva.create');
 Route::delete('/reservas/{reserva}', [ReservaController::class, 'destroy'])->name('reserva.destroy');
 Route::put('/reservas/{reserva}', [ReservaController::class, 'update'])->name('reserva.update');
 Route::get('/reservas/{reserva}/edit', [ReservaController::class, 'edit'])->name('reservas.edit');
-=======
 }); 
->>>>>>> f65b786560ceadfd5faebb785dd53fa893e9fc12

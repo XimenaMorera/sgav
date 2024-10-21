@@ -23,7 +23,7 @@ class ReservaController extends Controller
             ->get();
 
         // Retornar la vista 'reserva.index' con las reservas obtenidas
-        return view('reserva.index', ['reservas' => $reservas]);
+        return view('Reservas.index', ['reservas' => $reservas]);
     }
 
     /**
@@ -38,7 +38,7 @@ class ReservaController extends Controller
         $paquetes = DB::table('paquetes_turis')->get();
 
         // Retornar la vista para crear una nueva reserva
-        return view('reserva.new', ['clientes' => $clientes, 'paquetes' => $paquetes]);
+        return view('Reservas.new', ['clientes' => $clientes, 'paquetes' => $paquetes]);
     }
 
     /**
@@ -69,7 +69,7 @@ class ReservaController extends Controller
         $reserva->save();
 
         // Redirigir a la vista de índice con las reservas actualizadas
-        return redirect()->route('reservas.index');
+        return redirect()->route('Reservas.index');
     }
 
     /**
@@ -86,7 +86,7 @@ class ReservaController extends Controller
         $paquetes = DB::table('paquetes_turis')->get();
 
         // Retornar la vista de edición de la reserva
-        return view('reserva.edit', ['reserva' => $reserva, 'clientes' => $clientes, 'paquetes' => $paquetes]);
+        return view('Reservas.edit', ['reserva' => $reserva, 'clientes' => $clientes, 'paquetes' => $paquetes]);
     }
 
     /**
@@ -118,7 +118,7 @@ class ReservaController extends Controller
         $reserva->save();
 
         // Redirigir a la vista de índice con las reservas actualizadas
-        return redirect()->route('reservas.index');
+        return redirect()->route('Reservas.index');
     }
 
     /**
@@ -134,6 +134,6 @@ class ReservaController extends Controller
         $reserva->delete();
 
         // Redirigir a la vista de índice
-        return redirect()->route('reservas.index');
+        return redirect()->route('Reservas.index');
     }
 }
